@@ -6,6 +6,15 @@ async function postPaste() {
     const title = document.getElementById('title').value;
     const desc = document.getElementById('desc').value || undefined;
 
+    if (text.trim() == '') {
+        alert('Text should not be empty');
+        return;
+    }
+    if (title.trim() == '') {
+        alert('Title should not be empty');
+        return;
+    }
+
     const body = JSON.stringify({
         title: title,
         description: desc,
