@@ -1,1 +1,0 @@
-{"title":"Minimal Express example","text":"const express = require('express');\\n\\nconst app = express();\\napp.get('*', (req, res) => {\\n    res.send('Hello World!');\\n});\\n\\napp.listen(3000);"}

@@ -1,0 +1,15 @@
+version: "3"
+services:
+    dogebin:
+        build: .
+
+        ports:
+            - 8080:8080
+
+        volumes:
+            - ./storage:/app/backend/storage
+
+        environment:
+            - PROXY_PORT
+            - BACKEND_PORT
+            - FRONTEND_PORT
