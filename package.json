@@ -1,0 +1,23 @@
+{
+  "name": "dogebin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "yarn-recursive": "^1.1.0"
+  },
+  "scripts": {
+    "install-all": "yarn-recursive --skipRoot",
+    "build": "yarn build:frontend && yarn build:backend",
+    "build:frontend": "yarn --cwd ./frontend build",
+    "build:backend": "yarn --cwd ./backend build",
+    "dev": "concurrently \"yarn dev:frontend\" \"yarn dev:backend\" \"yarn start:proxy\"",
+    "dev:frontend": "yarn --cwd ./frontend dev",
+    "dev:backend": "yarn --cwd ./backend dev",
+    "start": "concurrently \"yarn start:frontend\" \"yarn start:backend\" \"yarn start:proxy\"",
+    "start:frontend": "yarn --cwd ./frontend start",
+    "start:backend": "yarn --cwd ./backend start",
+    "start:proxy": "yarn --cwd ./proxy start"
+  }
+}
