@@ -44,5 +44,14 @@ router.post('/api/paste', async (req: Request, res: Response) => {
     db.setPaste(id, result);
     res.status(200).send(id);
 });
+router.get('/raw/:id', async (req: Request, res: Response) => {
+    const db = new DatabaseContext();
+
+    try {
+        return res.status(200).send(db.getPaste(req.params.id).text);
+    } catch {
+        return res.status(404).send('');
+    }
+});
 
 export default router;

@@ -8,7 +8,7 @@ const FRONTEND_PORT = process.env.FRONTEND_PORT || 3000;
 const proxy = httpProxy.createProxyServer({});
 const app = express();
 
-app.all(/^\/api\/(.*)$/, function(req, res) {
+app.all(/^\/(api|raw)\/(.*)$/, function(req, res) {
     proxy.web(req, res, { target: `http://localhost:${BACKEND_PORT}` });
 });
 
