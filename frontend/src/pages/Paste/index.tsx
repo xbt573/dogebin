@@ -22,8 +22,8 @@ const Paste: Component = () => {
 
                     <Match when={paste()}>
                         <div class="m-5">
-                            <h1>{paste().title}</h1>
-                            <p>{paste().description}</p>
+                            <h1 class="text-3xl">{paste().title}</h1>
+                            <p class="text-xl">{paste().description}</p>
                             <div class="h-full border-solid border-2 border-gray-400">
                                 <pre><code>{paste().text.replaceAll('\\n', '\n')}</code></pre>
                             </div>

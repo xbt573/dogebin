@@ -30,7 +30,7 @@ async function postPaste() {
     });
 
     const url = await req.text();
-    location.replace(`/raw/${url}`);
+    location.replace(`/${url}`);
 }
 
 const Home: Component = () => {
